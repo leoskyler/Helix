@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: white;
+    font-family: sans-serif;
+}
+
+/* The glowing orbs */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: -1;
+    animation: move 20s infinite ease-in-out;
+}
+
+@keyframes move {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(100px, -150px); }
+    66% { transform: translate(-100px, 100px); }
+}
+
+/* Add some transparency to the chat container so the orbs show through */
+#chat-container {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
